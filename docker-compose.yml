@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  consumer:
+    build: websocket-consumer
+    environment:
+      - SERVER=provider
+    ports:
+      - "3000"
+  provider:
+    build: websocket-provider
+    ports:
+      - "3000:3000"
